@@ -1,0 +1,91 @@
+Magento PWA
+
+
+
+https://github.com/magento/pwa-studio/tree/develop
+
+https://www.youtube.com/watch?v=URVs2cCBXZM
+https://sebhastian.com/error-0308010c-digital-envelope-routines-unsupported/
+
+
+https://praveenchelumalla.com/2022/02/19/quick-install-magento-pwa/
+
+https://sebhastian.com/error-0308010c-digital-envelope-routines-unsupported/
+
+https://master-7rqtwti-c5v7sxvquxwl4.eu-4.magentosite.cloud/address-book
+
+https://devhooks.in/blog/list-of-graphql-queries-and-mutations-for-magento2#google_vignette
+
+https://piyushweb.com/blog/what-is-the-magento-pwa-studio/
+
+https://medium.com/swlh/installing-openssl-on-windows-10-and-updating-path-80992e26f6a1
+
+Magento 2 - How to Quick Install PWA Venia Concept:
+https://www.youtube.com/watch?v=URVs2cCBXZM
+
+
+@narayansinghjai I don't know if you still need this, but the problem is that pwa-buildpack generates a string with unescaped backslashes on Windows. To fix this, you need to replace a single backslash with two backslashes in files RootComponentsPlugin.js and LocalizationPlugin.js in node_modules\@magento\pwa-buildpack\lib\WebpackTools\plugins. I created a gist with code you can copy.
+
+https://gist.githubusercontent.com/DallogFheir/b7adb74afe41fac647c5b3d501b1cf8a/raw/92c5f1e6b215ee103cdc70677c8ab01b1bb9b7f3/LocalizationPlugin.js
+
+
+
+https://developer.adobe.com/commerce/pwa-studio/integrations/adobe-commerce/version-compatibility/
+devcert
+
+==================================
+
+PreRequest
+NodeJS >=10.14.1 LTS
+Yarn >=1.13.0
+
+
+=================
+devcert
+
+
+Step 1. Clone the PWA Studio repository
+
+git clone https://github.com/magento/pwa-studio.git
+
+Step 2.  Install PWA Studio dependencies
+
+npm install -g yarn
+
+yarn --version
+
+yarn install
+
+Step 3. Generate SSL certificate
+
+yarn buildpack create-custom-origin packages/venia-concept
+
+Step 4. Create the .env file
+
+yarn buildpack create-env-file packages/venia-concept
+
+Step 5. Start the server
+
+yarn run watch:venia
+=================================================================
+https://magento-venia-concept-gy-0c.local.pwadev:8281/
+
+issue fix this error path
+
+C:\xampp\htdocs\pwa-studio\node_modules\@magento\pwa-buildpack\lib\WebpackTools\plugins\
+
+two files:
+
+LocalizationPlugin.js
+https://gist.githubusercontent.com/DallogFheir/b7adb74afe41fac647c5b3d501b1cf8a/raw/92c5f1e6b215ee103cdc70677c8ab01b1bb9b7f3/LocalizationPlugin.js
+
+
+RootComponentsPlugin.js
+https://mage2.pro/t/topic/6232
+
+magento/pwa-studio/blob/v8.0.0/packages/pwa-buildpack/lib/WebpackTools/plugins/RootComponentsPlugin.js#L168-L168 62
+)}')}`;
+with the following one:
+
+).replace(/\\/g, '/')}')}`;
+

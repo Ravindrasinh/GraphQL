@@ -1,0 +1,149 @@
+'GraphQL is a very powerful query language and its more flexible & efficient than REST API.
+
+Magento 2 by default provides most of GraphQL Queries and Mutations.
+client access data in GraphQL
+
+
+GraphQL is a data query language developed internally by Facebook in 2012 before being publicly released in 2015. Magento implements GraphQL to provide an alternative to REST and SOAP web APIs for frontend development. Please check Magento official document to know more about GraphQL usage.
+
+
+create custom module and insert updatre and delete recored with graphQL
+
+ Create schema.graphqls file at app/code/vendorname/HelloWorld/etc/ and add the below code.
+type Query {
+    getRecords : [getAllRecords] @resolver( class: "Devhooks\\HelloWorld\\Model\\Resolver\\HelloWorldRecords") @doc(description: "Get All  Records")
+}
+
+type getAllRecords {
+    id : Int  @doc(description: "Primary Id"),
+    custom_field_1 : String  @doc(description: "Custom Field 1"),
+    custom_field_2 : String  @doc(description: "Custom Field 1"),
+    status : Int  @doc(description: "Status"),
+}
+
+You can add or extend any modules GraphQl schema in schema.graphqls file.
+
+As you can see, in the above code we've used resolver class Devhooks\\HelloWorld\\Model\\Resolver\\HelloWorldRecords. So, now we need to create it.
+
+
+REST APIs
+
+REST stands for “Representational State Transfer”. It is an architectural design that obeys a set of constraints while developing web applications.
+
+Request and responce strctunre in a REST API
+
+
+REST has multiple endpoints in the form of URLs to define resources. GraphQL has a single URL endpoint. REST returns data in a fixed structure defined by the server. GraphQL returns data in a flexible structure defined by the client.
+
+
+
+5. Explain in brief the EAV model?
+The EAV model (Entry, Attribute, Value) is also known as object-attribute-value or Open Schema. Magento makes use of a database or catalog management system.
+
+EAV is intended for databases in which a high number of attributes are used to identify a single entity, but not all of these attributes are relevant to that entity.
+
+When you use this model, only non-empty data values are kept. Although this model allows for more efficient storage, it is more complicated than the flat model since developers must execute many queries to obtain all of the information about a product or item.
+
+The EAV database model is completely normalized. Each column's value is stored in its data type database, making it more complicated because they must combine 5-6 tables even if only one detail is required. Columns are referred to as characteristics in EAV.
+
+Only one table is used in the flat model. It isn't normalized, thus it takes up extra space in the database. It's not ideal for dynamic requirements in which you could need to add extra columns in the future. Its performance is quick because it only requires one query rather than joining 5-6 tables. Columns are referred to as fields in the flat model
+
+11. What types of tables will be created when a new EAV module is built?
+When you construct a new EAV module, six tables will be created. They include:
+
+Module_datetime
+Module
+Module_decimal
+Module_int
+Module_text
+Module_varchar
+
+
+Under the frontend directory, create a new directory according to your theme vendor name: /app/design/frontend/Cloudways (I choose Cloudways as my theme vendor name). Under your theme vendor directory, create a guide for your Magento 2 theme: /app/design/frontend/Cloudways/m2-theme.
+
+then  Declare Magento Theme
+theme.xml
+
+ Add Composer Package
+ Add Registration.php File
+  Configure Custom Theme
+  
+  
+  
+ . Describe the ORM in Magento
+Object Relational Mapping (ORM) is a programming approach for converting various data kinds into objects and vice versa.
+
+ORM can be divided into two categories:
+
+It converts several data types into objects.
+It converts objects to a variety of data types.
+
+
+In Magento, handles are used in the layout XML files to define the structure and composition of a page. Handles represent different states or contexts in the page lifecycle, and they allow developers to specify how the page should be rendered for various scenarios. Here are some common types of handles in Magento:
+
+Default Handle (default):
+
+The default handle is applied to every page request in Magento.
+It provides a baseline structure for pages.
+Store Handles (store_[store_code]):
+
+Store handles are specific to a particular store view in a multi-store setup.
+They allow customization of the page layout based on the store view.
+Area Handles (area_[area_code]):
+
+Area handles are used to specify the context or area of the page (e.g., frontend, adminhtml).
+Common area handles include frontend and adminhtml.
+Action Handles ([module]_[controller]_[action]):
+
+Action handles are specific to a controller action in Magento.
+They allow customization for a particular controller action.
+Examples: catalog_product_view, customer_account_login, etc.
+Page Handles (cms_page):
+
+Page handles are used for CMS pages.
+They allow customization for individual CMS pages.
+Layout Update Handles (<update handle="[handle_name]"/>):
+
+Layout update handles are dynamic handles defined within layout XML files.
+They allow specific updates to the layout for certain conditions.
+Examples: <update handle="customer_logged_in"/>, <update handle="catalog_product_view_type_[product_type]"/>, etc.
+Specific Handles for Error Pages (default_no_route, default_index):
+
+These handles are used for error pages or default pages when a specific route or action is not found.
+Customer Handles (customer_logged_in, customer_logged_out):
+
+These handles are used to customize the layout based on whether the customer is logged in or logged out.
+
+
+
+dependency injection in magento 2
+
+class uses other class in magento 2 then call dependency injection
+
+
+===================
+When asked "What do you do?" as a Magento developer, you can respond with a concise and informative answer. Here's an example:
+
+"I am a Magento developer. My primary focus is on creating and maintaining e-commerce websites using the Magento platform. I work with PHP, MySQL, and other web technologies to build robust and scalable online stores. I handle tasks such as module development, theme customization, and performance optimization to ensure a seamless and efficient shopping experience for users."
+
+Feel free to tailor this response based on your specific roles, responsibilities, and expertise within Magento development.
+
+
+https://www.youtube.com/watch?v=sY9xfXNt-iI
+https://devhooks.in/blog/create-custom-graphql-query-in-magento-2
+https://devhooks.in/blog/list-of-graphql-queries-and-mutations-for-magento2#google_vignette
+https://devhooks.in/blog/magento-2-how-to-create-and-update-customer-using-graphql
+https://devhooks.in/blog/magento-2-how-to-create-cart-ready-for-checkout-in-graphql
+https://devhooks.in/blog/magento-2-how-to-create-order-using-graphql
+https://devhooks.in/blog/magento-2-how-to-get-simple-products-in-graphql
+https://developer.adobe.com/commerce/webapi/graphql/
+
+
+query {
+  getUsers {
+    id
+    username
+    email
+    description
+  }  
+}

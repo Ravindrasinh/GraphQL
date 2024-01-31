@@ -1,0 +1,104 @@
+
+GraphQL is a data query language developed internally by Facebook in 2012 before being publicly released in 2015. Magento implements GraphQL to provide an alternative to REST and SOAP web APIs for frontend development.
+
+GraphQL is a very powerful query language and its more flexible & efficient than REST API.
+
+Magento 2 by default provides most of GraphQL Queries and Mutations.
+
+Ques:1 What is GraphQL and how does it differ from REST API?
+Ans:- GraphQL is a data query language for APIs that allows the client to specify exactly what data it needs form the
+      server. unlike REST API, retrieves fixed data form differnt endpoints, GraphQL allows client to retrieves only the data 
+	  they need in a single request.
+
+Ques:2 What are the advantages of using GraphQL over REST API?
+Ans:- GraphQL provide a flexible and efficient approach to building APIs by allowsing client to request only the data they
+      need, reducing networks requests and minimizing the amount of the data transferred also faster development
+	 
+Ques:3 What is a schema in GraphQL?
+Ans:- A schema in GraphQL defines the types of data that can be queried.
+
+Ques:-4 What are the different types of scalar type in GraphQL?
+Ans:- The scalar types in GraphQL is int, Float, String, Boolean, and id .
+      int, Float represents numerical values,
+	  String represents textual data,
+	  Boolean represents true/false values
+	  ID represents a unique identifer.
+	  
+Ques:-5 What are the resolver function in GraphQL?
+In Magento 2, resolvers play a crucial role in handling GraphQL queries. A resolver is a PHP class that contains the logic for fetching data associated with a specific field in a GraphQL query. Resolvers are responsible for determining how to retrieve or compute the data for a particular field.
+
+main types of resolvers in Magento 2 GraphQL
+1) Query Resolver:
+
+Responsible for handling top-level queries. It typically corresponds to the query root type in GraphQL.
+
+2) Mutation Resolver: 
+
+Handles mutations, which are operations that modify data. Mutations correspond to the mutation root type in GraphQL.
+
+3) Field Resolver:
+
+Resolves individual fields within a type. It provides the logic for fetching or calculating the data associated with a specific field.
+
+4) List Resolver:
+
+Resolves fields that return a list of items. It determines how to fetch or process each item in the list.
+
+5) Interface Resolver:
+
+Resolves fields on GraphQL interfaces. It is responsible for determining the concrete type of an object that implements the interface.
+
+6) Union Resolver
+
+Resolves fields on GraphQL unions. It determines which type of object is being queried when the field returns a union type.
+
+
+Qus:7 How do you define a query in GraphQL?
+Ans:- Define a query in GraphQL you create a query string that specifies the fields to be
+      retrived and their corresponding types. the query is then passed to server,
+	  which return the requested data in the specific format.
+	  
+	  
+Que:- Public cache and private cache 
+
+Public Cache:
+
+When a response is marked as "public," it means that the response can be cached by any cache, even if it is shared by multiple users.
+Public caching is suitable for resources that are the same for all users and don't contain sensitive or user-specific information.
+It is generally used for resources that are static or have a long cache lifetime.
+Example using Cache-Control header:
+
+http
+Copy code
+Cache-Control: public, max-age=3600
+
+
+Private Cache:
+
+When a response is marked as "private," it indicates that the response is specific to a particular user and should not be stored by shared caches.
+Private caching is suitable for resources that are personalized or contain sensitive information that should not be shared among users.
+Private caches are typically used when the response depends on specific user authentication or contains user-specific data.
+Example using Cache-Control header:
+
+http
+Copy code
+Cache-Control: private, max-age=3600
+
+
+Indexing is an important aspect of database management that improves query performance by allowing efficient search and retrieval of data. There are two types of indexing: full and partial indexing.
+
+Full Indexing: Full indexing is a method of indexing an entire database table or a subset of columns within the table. In this method, all the records in the indexed columns are included in the index. This results in a complete index of all the data in the indexed columns, making the search process faster and more efficient.
+
+Partial Indexing: Partial indexing, on the other hand, is a method of indexing only a portion of the records in a database table. This is typically done when a database table has a large number of records, and indexing all of them would consume a lot of resources. In partial indexing, only a subset of the data is indexed, and the remaining data is excluded from the index. This makes the index smaller and more manageable, while still providing an efficient way to search for specific data.
+
+
+8. What do you understand by Magic Methods in Magento?
+Any function that starts with two underscores (__) is known as the magic method. With magic methods, you can call any function automatically. There is no need to call functions explicitly to execute codes in these functions. You can call Magic methods to check, set, unset, and retrieve data.
+
+The following is the list of magic methods in Magento:
+
+__construct()	This method is called automatically after the creation of an object.
+__destruct()	This method is called when an object has no other references.
+__get()	This method is called when we intend to get values for class properties.
+__set()	This method is called when we intend to put values for class properties.
+__call()	This method is called when an inaccessible or undefined method is called in an object.

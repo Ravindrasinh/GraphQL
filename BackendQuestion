@@ -1,0 +1,180 @@
+Magento 2
+
+1) Magento 2 Proxies
+
+Proxy classes are used to work in place of another class and in Magento 2 they are sometimes used in place of resource hungry classes.
+
+https://magento.stackexchange.com/questions/234961/how-many-design-patterns-does-magento-have
+ ?
+As you know in OOP, a factory method will be used to instantiate an object. In Magento 2, the Magento 2 Factory Object do the same thing. The Factory class name is the name of Model class and append with the Factory word
+
+7) Dependency Injection In Magento2
+Ans:-It is an alternative to Mage in Magento 1. It is a concept of injecting the dependent object through the external environment
+
+There are three types of dependency injection — constructor injection, method injection
+https://www.sparsh-technologies.com/blog/dependency-injection-in-magento-2
+
+6) How many ways you can customize/extend core functionalities of Magento2
+If want to change in any template,js,xml and html file then you will be need to override in your theme using path :
+
+app/design/frontend/{{vendor}}/{{theme}}/Vendor_Module/
+
+If you want to change block,model,cotroller and helper then you will be need to create your module and rewrite your logic on this module using di.xml
+
+
+8) Difference between "type" and "virtualType" in di.xml.
+Ans:- On Magento 2 platform, the di. xml supports two types of nodes which are a node type and a node virtualtype , meanwhile virtualtype is considered as a perfect method instead of the type . Virtual types are similar to the types but provides additional flexibilty as they allow defining a virtual class.
+
+Virtual types are a way to inject different dependencies into existing classes without affecting other classes.
+
+Virtual type: new class create work krse
+Type: Existing class par work krse
+
+3) What do you understand by Magic Methods in Magento?
+Any function that starts with two underscores (__) is known as the magic method. With magic methods, you can call any function automatically. There is no need to call functions explicitly to execute codes in these functions. You can call Magic methods to check, set, unset, and retrieve data.
+
+
+
+The following is the list of magic methods in Magento:
+
+__construct()	This method is called automatically after the creation of an object.
+__destruct()	This method is called when an object has no other references.
+__get()	This method is called when we intend to get values for class properties.
+__set()	This method is called when we intend to put values for class properties.
+__call()	This method is called when an inaccessible or undefined method is called in an object.
+
+=====
+4) How to Use Require JS in Magento 2
+Ans:- https://www.rakeshjesadiya.com/require-js-config-map-vs-paths-vs-shim-in-magento/
+Magento 2 used Require JS Configuration properties are the map, paths, shim, mixins, and deps.
+In Magento, We have to declare all the Require JS configuration properties inside the requirejs-config.js file.
+map: map config used to mapping js file. If you want to declare any new JS file that contains the define() method as well as you can also override core Magento JS or template files.
+ 'Magento_Checkout/template/view/shipping.html' : 'Rbj_Checkout/template/view/shipping.html',
+
+paths: paths config is the same as maps but also used to declare paths of the JS file.
+
+shim: shim config used to declare dependency.
+If you want to load a specific file before any other JS file you can declare using shim config.
+
+
+5) Magento 2 Knockout JS
+Knockout is a Javascript library which helps in the frontend of Magento 2. It implements MVVM (Model-View-View-Model) design pattern. You can find Knockout JS in Magento 2 on almost every page, but mostly on the checkout page.
+
+
+9) What is GraphQL and how does it differ from REST API?
+Ans:- GraphQL is a data query language for APIs that allows the client to specify exactly what data it needs form the
+      server. unlike REST API, retrieves fixed data form differnt endpoints, GraphQL allows client to retrieves only the data 
+	  they need in a single request.
+	  
+	Sub Question: Magento 2 GraphQL Query and Mutation
+	While we use queries to fetch data, we use mutations to modify server-side data. 
+	  
+10) Difference between Configurable Products & Bundled Products
+Ans:- Configurable products allow you to sell each variant separately. For instance, customers can choose a specific variant like "T-shirt Blue-M"
+
+bundled product: customer can not skip must choose from the available options to complete the set.
+
+
+11) Difference between Magento Community Edition & Enterprise Edition?
+    Enterprise Edition Featured
+Ans:- Feature Customer Segmentation, Targeted Promotions & Merchandising,Dynamic Rule Based Product Relations, Automated Email Marketing Reminder, Private Sales, Gift Registry, Gifting Options, Rewards Points, Store Credits, Add to Cart by SKU, Return Management Authorization (RMA), Content Management System, Scheduled Import/Export Functionality, Backup and Rollback, Staging, Merging and Rollback of Content, Customer Attribute Management, Administrator Permission Roles on Website and Store Levels, Price and Promotion Permission, Logging of Administrator Actions, Full Page Caching, Optimized Indexing
+
+Magento Commerce Cloud
+https://www.mgt-commerce.com/blog/what-is-magento-commerce-cloud-features-benefits/
+	
+12) Customer Segmentation
+Ans:- Customers segments allow you to dynamically display content and promotions to specific customers, based on various properties.
+
+
+13) Indexing is an important aspect of database management that improves query performance by allowing efficient search and retrieval of data. There are two types of indexing: full and partial indexing.
+
+Full Indexing: Full indexing is a method of indexing an entire database table or a subset of columns within the table. In this method, all the records in the indexed columns are included in the index. This results in a complete index of all the data in the indexed columns, making the search process faster and more efficient.
+
+Partial Indexing: Partial indexing, on the other hand, is a method of indexing only a portion of the records in a database table. This is typically done when a database table has a large number of records, and indexing all of them would consume a lot of resources. In partial indexing, only a subset of the data is indexed, and the remaining data is excluded from the index. This makes the index smaller and more manageable, while still providing an efficient way to search for specific data.	
+
+14) Difference between the Varnish and Redis cache in Magento performance
+
+Varnish and Redis are both caching solutions used in Magento to enhance performance, but they serve different purposes within the system. Varnish is primarily for caching frontend content, while Redis is a versatile caching solution used for various types of data storage and retrieval within Magento. Both Varnish and Redis play crucial roles in optimizing Magento’s performance, and using them together can provide a comprehensive caching strategy for your e-commerce store.
+
+
+15) How to get Customer Collection in Magento 2
+https://www.mageplaza.com/devdocs/get-customer-collection-magento-2.html#get-object
+
+16) What is the difference between factory and repository in Magento 2?
+Ans:- The main difference between Magento 2 Repository and Factory is their purpose. Repositories are used to manage the retrieval and storage of data, while Factories are used to create objects.
+
+
+17) How can you increase the Magento performance?
+
+Step 1: Upgrade Your Magento Store
+Step 2: Choose the Right Hosting
+Step 3: Inspect Third-Party Extensions
+Step 4: Enable Elastic Search
+Step 5: Clear Database Logs
+Step 6: Run in Production Mode
+Step 7:  Implement Varnish Cache
+Step 8: Use Flat Catalog Indexing
+Step 9: Minify JS/CSS Files
+Step 10: Re-index Products on Your Store
+
+
+18) What is ViewModel? Benefits of using it?
+
+
+
+19) Interfaces
+PHP - Interfaces vs. Abstract Classes
+Interface are similar to abstract classes. The difference between interfaces and abstract classes are:
+
+Interfaces cannot have properties, while abstract classes can
+All interface methods must be public, while abstract class methods is public or protected
+All methods in an interface are abstract, so they cannot be implemented in code and the abstract keyword is not necessary
+Classes can implement an interface while inheriting from another class at the same time
+
+20) What is the difference between model and resource model?
+A “model” is used to store data, and perhaps performs some business logics against that data. A “resource model” is used to interact with the database  on behalf of the “model”. The “resource model” actually performs the CRUD operations.
+
+
+
+canada post shipping methods use in magento 2
+Live and exact shipping rates by Canada post API.
+
+
+Varnish and Redis are both caching solutions used in Magento to enhance performance, but they serve different purposes within the system. Varnish is primarily for caching frontend content, while Redis is a versatile caching solution used for various types of data storage and retrieval within Magento. Both Varnish and Redis play crucial roles in optimizing Magento’s performance, and using them together can provide a comprehensive caching strategy for your e-commerce store.
+
+====
+What is a Cron Job?
+Cron Job is a great feature by Linux, the free operating system for the user. The cron Job will create a command or a script that is appropriate with the task you want to do. Instead of manual working, the Cron Job allows running automatically in exact time and date. Due to its automation, the Cron Jobs is the perfect choice for repeated projects every date or every week.
+
+Applications of Cron Job for Magento 2
+Several Magento features require at least one Cron Job, which schedules activities to occur in the future. A partial list of these activities follows:
+
+Catalog price rules
+Newsletters
+Generating Google sitemaps
+Customer Alerts/Notifications (product price change, product back in stock)
+Reindexing
+Private sales (Magento Commerce only)
+Automatic updating of currency rates
+All Magento emails (including order confirmation and transactional)
+
+====
+2)Drop a column from the table using db_schema.xml in Magento 2.
+Example for remove column,
+email column.
+<column xsi:type=”varchar” name=”email” nullable=”true” length=”255″ comment=”Email”/>
+
+Drop email column using disabled=”true”,
+<column xsi:type=”varchar” name=”email” nullable=”true” length=”255″ comment=”Email” disabled=”true”/>
+
+But only disabled=”true” is not enough to remove/drop column from table. You must first generate a db_schema_whitelist.json file to remove a column from the table.
+
+=> db_schema_whitelist.json file.
+
+In Magento 2, Magento Version 2.3 and higher version contains the declarative schema approach for database tables history.
+
+You can create db_schema_whitelist.json using the command line with a single command,
+
+The generated file location is the <Vendorname>/<Modulename>/etc/db_schema_whitelist.json in your module.
+
+This file provides a history of modules all tables, columns, and keys added with a declarative schema.

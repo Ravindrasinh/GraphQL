@@ -1,0 +1,303 @@
+1) If we create new promo code in not give the start date then what gone happen?
+ans: Current date
+
+--------------------------------------
+2) For what you can create default category?
+ans: store
+
+----------------------------------------------------    
+3) if you want to add product attribute in layered navigation then what is input type of that attribute? 
+ans: dropdown
+
+--------------------------------------------------
+4) if you want to chnage third party module js then what you do for that?
+ans: view/frontend/requirejs-config.js
+
+---------------------------------------
+5) How to overrride core class in di.xml?
+ans: prefences
+--------------------------------------- 
+6) How to pass array argument in the di.xml?
+ ans: xsi:type = "array"
+
+ -----------------------------------------------------
+7) How to call checkout controller?
+ ans: controller/index/index.php
+
+--------------------------------------------- 
+8) In ui component how to give action?
+ans: actionsColumn
+
+-------------------------------------------- 
+9) In cron job?
+ans: cron_schedule
+
+------------------------------------------------------
+10) How to know the eav attribute is same type? => Entity_type_id
+	-> 8 types of entityid
+	- 1. customer
+	- 2. customer_address
+	- 3. catalog_category
+	- 4. catalog_product
+	- 5. order
+	- 6. invoice
+	- 7.creditmemo
+	- 8. shipment
+
+------------------------------------------
+11) Url rewrite use for?
+ans: user freindly
+
+------------------------------------------------ 
+12) How to css call in layout file? 
+ans: <head>
+		<css src="css/custom.css" rel="stylesheet" type="text/css"  />
+    </head>
+
+-------------------------------------------------	    
+13) How to change table name without lose data? 
+ans: <table name="rh_helloworld_new_tbl" onCreate="migrateDataFromAnotherTable(rh_helloworld)" resource="default" engine="innodb" comment="RH Helloworld">
+
+Only column rename use: migrateDataFrom(old_column_name)
+--------------------------------------- 
+14) How to check all module status? 
+ans: php bin/magento module:status
+
+--------------------------------------------- 
+15) What is webroot directory of magento 2?
+ans: pub/
+
+------------------------------------------------------------- 
+16) How can a customer CMS page be set as a home page?
+ans: admin  store config
+
+path: admin/storeconfig/web/Default Page/Cms home page
+------------------------------------------------ 
+17) Characteristis of persistent cart? 
+ 	=> while the customer is login if the the session expire, 
+    while using the persistant cart guest user do not need to log, 
+    by defalut persistant cokkie will be come in active in 30 days
+
+------------------------------------------------------- 	
+18) In shopping cart if there is any problem which table should the developer check?
+ans: quote
+
+-------------------------------------------------- 
+19) which defalut component allow to developer 
+ans: Section component.
+ 
+-------------------------------------------- 
+20) which condition must be satisfy ensure that a disacrd.....from being apply to same product
+ans: Each pricing rule must have the defined priority. 
+
+----------------------------------------------------------------- 
+21) A child theme inherites view configuration ,templates, layout of the parent.
+ans:  
+--------------------------------------------- 
+22) How to define single column layout?
+ans: <action method="setTemplate"><template>page/1column.phtml</template></action>
+For page layout:<action method="setTemplate"><template>page/page.phtml</template></action>
+-------------------------------------------------
+23) By which object you can call widget in js?
+ans: $widget
+
+------------------------------------------------- 
+24) What type of product is most customizable?
+ans: bundle
+ 
+--------------------------------------
+25) Cache clean command
+ans: bin/magento cache:clean
+
+-------------------------------------- 
+26) invalid indexr
+an: bin/magento indexer:reset
+
+----------------------------------------------------- 
+27) If we want to sell electronic version of songs then what is the product type?
+ans: downloadable
+ ex: ebook, music,video,software app or update.
+---------------------------------------------------- 
+28) In which file you can see module is enable or disble?
+ans: app/etc/config.php
+
+------------------------------------------------ 
+29) Static content deploy command 
+ans: php bin/magento setup:static-content:deploy -f
+ 
+------------------------------------------
+30) How to check status of Static content signing
+ans: bin/magento config:show dev/static/sign
+
+------------------------------------------ 
+31) How to extends parent theme CSS into child theme?
+ans: /app/design/frontend/Brainvire/micromo/web/css/source/_extend.less
+
+Vendor path: /micromo/lib/web/css/source
+-----------------------------------------------------
+32) How to create eav-attribute for apply specific product type? 
+ans: 'apply_to'->'Product type'  
+
+-------------------------------------------
+33) Tax class can be assign to....
+ans: customer,product and shipping
+
+------------------------------------------------------------------------
+34) Product Attribute show in product detail custom tab. so which configuration you need to do?
+ans: visible on catalog pages on storefront
+
+------------------------------------------------------------
+35) How can we disable plugins?
+ans: disabled ="true"
+
+----------------------------------------------------------------
+36) What is the right code to add jquery in phtml
+    why use require function in js
+
+Ans :-  <script>
+    require([
+        'jquery'
+],
+function ($) {
+        $("#element_example").show();
+    });
+    </script>
+
+---------------------------------------------------------
+37) How to call Ui-Component in layout.xml
+Ans :-  <referenceContainer name="content">
+            <uiComponent name="categoryfilter_categoryfilter_form"/>
+        </referenceContainer>
+
+-------------------------------------------------------------
+38) Require files to create module (Choose two).
+ans: Registration.php, etc\module.xml
+
+----------------------------------------
+39) Require files to create Theme (Choose two). #
+Ans: Registration.php  theme.xml
+
+-----------------------------------------------
+40) 1-2 Question related to 'RouteName/Controller/Action'
+7). 1 Question related to Custom Router  #
+
+8). 4-5 Layout related Question
+
+-----------------------------------------------------
+41) Where we can set default value for configuration.   
+Ans:- etc\config.xml
+
+----------------------------------------------------------
+42) Remove table column using db_schema.xml
+ans: disabled=”true”,
+
+------------------------------------
+43) 1-2 Question related to db_schema_whitelist.json ( cmd command )
+ans: php bin/magento setup:db-declaration:generate-whitelist --module-name=YourModule_Name
+
+-------------------------------------------------------------
+44) type and virtual-type in di.xml relatated 1-2 Questions.
+
+Virtual type: new class create work krse
+Type: Existing class par work krse
+------------------------------------------------------------
+45) 1-2 Question related to CMS-pages ( how to add block and create block for cms )
+
+---------------------------------------------------------------------
+46) cretae layout file for specific product.?
+ans ->  catalog_product_view_id_{id}.xml
+
+-----------------------------------------------------------------------------------
+47) Default category assign in...
+ans-> store
+
+---------------------------------------------------
+48) How to remove layered navigation from category?
+ans-> goto Catalog -> Category -> Display Setting -> Anchor(no)
+
+----------------------------------------------------------
+49) Product Attribute show in product detail custom tab. so which configuration you need to do?
+ans-> visible on catalog pages on storefront
+
+-----------------------------------------------------------------------------------
+50) Add cms page in layout.
+ans: <referenceContainer name="page.wrapper">
+
+<container name="header.container" as="header_container" label="Page Header Container"  htmlTag="header" htmlClass="page-header" before="main.content"/>
+
+<container name="page.top" as="page_top" label="After Page Header" after="header.container"/>
+
+<container name="footer-container" as="footer" after="-" label="Page Footer Container" htmlTag="footer" htmlClass="page-footer" />
+
+</referenceContainer>
+
+--
+<referenceContainer name="content">
+        <block class="Brainvire\QuoteForm\Block\Index" name="quote_index_index" template="Brainvire_QuoteForm::Form.phtml" />
+    </referenceContainer>
+----------------------------------------------------
+51) i have create english and german language and i have created attribute which is apply on both storeview.
+ans: global(attribute)
+
+------------------------------------------------------------------------
+52) i want to add membership in my store which product type ??
+Ans :- Virtual
+ex: magazine sub, gift card, gym membership
+-------------------------------------------------------
+53) i have create 2 language storeview and i want price for both storeview how can i acheve this?
+ans: website(price)
+
+--------------------------------------------------------------------------------
+54) i have 2 stores and i want to add language for one store how can i achieve this ?
+ans:store(language)
+
+-------------------------------------------------------
+55) auto generate coupon codes length
+ans: 12
+
+-------------------------------------------
+56) what is default class model in
+ans: Magento\Framework\Model\AbstractModel->not sure
+
+-----------------------------------------------------
+57) Which entity in Magento supports scoped attributes?
+Ans: Category
+Customer (Scope: Global)
+customer_address (Scope: Global)
+catalog_category (Scope: Default, Website and Store)
+catalog_product (Scope: Default, Website and Store)
+as when you have a look on eav_entity_type table’s column additional_attribute_table and entity_attribute_collection you can see the values for above 4 entity_types only.
+
+---------------------------------------------------------
+58) While reviewing a layout file named sales_order_view.xml you notice the element <update handle="customer_account"/>
+What is the purpose of this element?
+
+Ans: Adds the customer_account handle to the page’s handles list
+
+---------------------------------------------------------------------
+59) how to translate tring in javasscript
+ans: require(['jquery','mage/translate'],function ($) {
+  'use strict';
+   alert($.mage.__('Test'));
+});
+
+frontend_model: Specifies a different frontend model to change the rendering and modify the output.( blocks class returns html of settings field)
+backend_model: Specifies a different backend model to modify the configured values.(afterload, aftersave,before)
+source_model: Specifies a different source model that provides a specific set of values.(to get the existing value)
+
+
+-------------------------------------------------
+https://vceguide.com/what-is-the-relationship-between-products-and-categories-in-magento/
+
+
+Naeem Qns
+
+Q1 : what is the soft  dependency on composer.json.
+Q2 : How to add new step on checkout before payment step.
+Q3 : How to override private function in custom module.
+Q4 : How to call js file in phtml.
+Q5 : How to enable single store mode.
+Q6 : How to add telephone on checkout page.
+Q7 : Plugin Works on which sort order.
+Option: a) high to low b) low to high
+Q8 : How enable quotes functinality in enterprise.
